@@ -1,0 +1,169 @@
+.sprite {
+    image-rendering: pixelated
+}
+
+span.sprite {
+    display: inline-block;
+    vertical-align: text-top;
+    /* height: 16px;
+    width: 16px; */
+    background-repeat: no-repeat;
+}
+
+.schematic-sprite {
+    background-image: url(../images/SchematicSprite.png);
+    background-size: 32em auto;
+    width: 1em;
+    height: 1em;
+}
+
+
+table.schematic {
+    border: none; /* disable inherited style */
+    border-collapse: collapse;
+    font-size: 32px
+}
+
+span.schematic {
+    display: inline-block;
+    font-size: 32px
+}
+
+table.schematic>tbody>tr {
+    background-color: transparent; /* disable inherited style */
+}
+
+table.schematic td {
+    border-bottom: none; /* disable inherited style */
+    border-right: none; /* disable inherited style */
+
+    vertical-align: top
+}
+
+table.schematic td,
+span.schematic {
+    /* background-color: #FFF; */
+    /* border: 1px solid #CCC; */
+    padding: 0;
+    width: 1em;
+    height: 1em;
+    overflow: hidden
+}
+
+table.schematic td > div,
+span.schematic {
+    position: relative
+}
+
+table.schematic td > div .sprite,
+table.schematic td > div .text,
+span.schematic .sprite,
+span.schematic .text {
+    position: absolute;
+    left: 0
+}
+
+.schematic .text {
+    line-height: 1.5em;
+    font-size: 75%;
+    width: 100%;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 2px #FFF
+}
+
+.layered-blueprint {
+    position: relative
+}
+
+.layered-blueprint-radio {
+    display: none;
+}
+
+.layered-blueprint-tab {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 100%;
+    border-left: 4px solid #252525;
+    padding: 0.2em 0.5em;
+    white-space: nowrap;
+    transition: color 200ms,border-color 200ms;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.layered-blueprint-tab:hover {
+    color: #80b640
+}
+
+.layered-blueprint-radio:checked + .layered-blueprint-tab {
+    color: #80b640;
+    border-left-color: #80b640
+}
+
+@-webkit-keyframes layered-blueprint-fade-in {
+    0% {
+        opacity: 0;
+        visibility: hidden
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+@keyframes layered-blueprint-fade-in {
+    0% {
+        opacity: 0;
+        visibility: hidden
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+.layered-blueprint-layer {
+    position: absolute;
+    top: 0;
+    background-color: rgba(255,255,255,0.5);
+    width: 100%;
+    height: 100%;
+    -webkit-animation: layered-blueprint-fade-in 200ms;
+    animation: layered-blueprint-fade-in 200ms
+}
+
+@-webkit-keyframes layered-blueprint-fade-out {
+    0% {
+        opacity: 1;
+        visibility: visible
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden
+    }
+}
+
+@keyframes layered-blueprint-fade-out {
+    0% {
+        opacity: 1;
+        visibility: visible
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden
+    }
+}
+
+.layered-blueprint-radio:checked + .layered-blueprint-tab + .layered-blueprint-layer ~ .layered-blueprint-layer {
+    visibility: hidden;
+    -webkit-animation: layered-blueprint-fade-out 200ms;
+    animation: layered-blueprint-fade-out 200ms
+}
