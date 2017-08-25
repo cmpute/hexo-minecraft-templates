@@ -1,5 +1,25 @@
 {
     "name": "hexo-minecraft-templates",
-    "version": "0.1.7",
-    "main": "index"
+    "version": "0.1.10",
+    "main": "index",
+    "description": "Generate Minecraft related content just like in MinecraftWiki.",
+    "dependencies": {
+        "hexo": "~3.3.8"
+    },
+    "keywords": [
+        "hexo",
+        "tag",
+        "minecraft"
+    ],
+    "author": "Jacob Zhong",
+    "license": "MIT",
+    "bugs": {
+        "url" : "https://github.com/cmpute/hexo-minecraft-templates/issues",
+        "email" : "cmpute@qq.com"
+    },
+    "homepage": "https://github.com/cmpute/hexo-minecraft-templates",
+    "repository": { 
+        "type" : "git",
+        "url" : "https://github.com/cmpute/hexo-minecraft-templates.git"
+    }
 }

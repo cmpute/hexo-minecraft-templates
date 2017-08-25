@@ -25,3 +25,4 @@ Generate Minecraft schematic blocks table with hexo tags. See official Minecraft
 - Add display for size and block statistic info
 - Add tag option for side/top view
 - Add option for border style: none, whole, level
+- Clean and minify css
