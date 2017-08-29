@@ -7,6 +7,15 @@ Generate Minecraft schematic blocks table with hexo tags. See official Minecraft
 [Demo here](http://jacobz.top/2017-08/MCTowerWheat/)
 
 ## Usage example:
+Single Level:
+```
+{% minecraft caption %}
+|AB + T |rd-se! |rd-ew! |SB     |-
+|AB     |       |       |rd-!   |-
+{% endminecraft %}
+```
+
+Multiple Level:
 ```
 {% minecraft caption %}
 |----LevelName1|-
@@ -20,7 +29,6 @@ Generate Minecraft schematic blocks table with hexo tags. See official Minecraft
 
 # TODO
 - Add argparser and args: label-align, grid-size, is-layer-tansparent ([Format here](https://hexo.io/zh-cn/docs/tag-plugins.html))
-- Support single level
 - Add link for blocks
 - Add display for size and block statistic info
 - Add tag option for side/top view

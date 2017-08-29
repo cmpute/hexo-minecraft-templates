@@ -12,7 +12,6 @@ hexo.extend.generator.register('minecraft.css', function(local){
 });
 
 hexo.extend.generator.register('minecraft.images', function(local){
-    console.log(module.filename);
     return {
         path: 'images/SchematicSprite.png',
         data: function(){

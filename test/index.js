@@ -9,4 +9,10 @@ var content = "\
 |AB||K|-\
 ";
 
-var result = render(['test'], content);
+var singleLevel = "\
+|AB + T |rd-se! |rd-ew! |SB     |-\
+|AB     |       |       |rd-!   |-\
+"
+
+var result = render(['test'], singleLevel);
+console.log(result);
