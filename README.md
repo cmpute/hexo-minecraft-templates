@@ -27,6 +27,10 @@ Multiple Level:
 {% endminecraft %}
 ```
 
+# Notes
+- Anonymous levels are named as Level1, Level2...
+- The blocks before the first level tag are named as Level0
+
 # TODO
 - Add argparser and args: label-align, grid-size, is-layer-tansparent ([Format here](https://hexo.io/zh-cn/docs/tag-plugins.html))
 - Add link for blocks
