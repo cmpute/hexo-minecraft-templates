@@ -1,3 +1,4 @@
+import datetime
 import json
 import re, os
 import requests
@@ -9,6 +10,8 @@ basic = requests.get('https://minecraft.gamepedia.com/api.php?action=parse&forma
 basic = bs(basic['parse']['text']['*'])
 basic = basic.find_all(class_='schematic')
 
+print("// Fetched time: ", datetime.datetime.now())
+print("// Basic Identifiers")
 for elem in basic:
     loc = elem.contents[-1]['style']
     name = elem.next_sibling
@@ -17,8 +20,6 @@ for elem in basic:
     # specific cases
     if '?' in name:
         name = '???, unknown' # there is invalid char in origin of this name
-    if name == 'JL, Pu':
-        name = 'Pu' # conflict of jl and JL
 
     elemstr = ['"{name}" : [{x}, {y}],'.format(name=sname.lower().strip(),
                                                x=int(int(px[0])/32), y=int(int(px[1])/32))\
@@ -27,7 +28,7 @@ for elem in basic:
 
     if elem.previous_sibling is None:
         parent = elem.find_parent('td')
-        elemstr += ' // ' + ''.join(parent.find_previous_sibling('td').findAll(text=True))
+        elemstr += ' // ' + ''.join(parent.find_previous_sibling('td').findAll(text=True)).rstrip('\n')
 
     print(elemstr)
 
@@ -37,7 +38,7 @@ basic = requests.get('https://minecraft.gamepedia.com/api.php?action=parse&forma
 basic = bs(basic['parse']['text']['*'])
 basic = basic.find_all(class_='schematic')
 
-
+print("// Redstone Identifiers")
 for elem in basic:
     loc = elem.contents[-1]['style']
     name = elem.next_sibling
@@ -51,7 +52,6 @@ for elem in basic:
 
     if elem.previous_sibling is None:
         parent = elem.find_parent('td')
-        elemstr += ' // ' + ''.join(parent.find_previous_sibling('td').findAll(text=True))
-        # TODO: Directly remove the second line of the description
+        elemstr += ' // ' + ''.join(parent.find_previous_sibling('td').findAll(text=True)).rstrip('\n')
 
     print(elemstr)

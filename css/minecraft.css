@@ -11,6 +11,7 @@ span.sprite {
 }
 
 .schematic-sprite {
+    /* Fetched from https://minecraft.gamepedia.com/File:SchematicSprite.png */
     background-image: url(../images/SchematicSprite.png);
     background-size: 32em auto;
     width: 1em;
