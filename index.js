@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-hexo.extend.tag.register('minecraft', require('./lib/render_schematic'), {ends: true, async: true});
+hexo.extend.tag.register('minecraft', require('./lib/render_schematic')(hexo), {ends: true, async: true});
 
 hexo.extend.generator.register('minecraft.css', function(local){
     return {
