@@ -1,10 +1,10 @@
 {
     "name": "hexo-minecraft-templates",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "main": "index",
     "description": "Generate Minecraft related content just like in MinecraftWiki.",
-    "dependencies": {
-        "hexo": "~3.3.8"
+    "devDependencies": {
+        "hexo": "^5.0.0"
     },
     "keywords": [
         "hexo",

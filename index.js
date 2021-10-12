@@ -1,3 +1,5 @@
+/* global hexo */
+
 var fs = require('fs');
 
 hexo.extend.tag.register('minecraft', require('./lib/render_schematic')(hexo), {ends: true, async: true});

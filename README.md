@@ -4,7 +4,7 @@ A plugin for hexo to generate Minecraft related content just like in [MinecraftW
 # Schematic Template
 Generate Minecraft schematic blocks table with hexo tags. See official MinecraftWiki [help page](https://minecraft.gamepedia.com/Help:Schematic) and [documentation](https://minecraft.gamepedia.com/Template:Schematic) for usage and block identifing codes.
 
-[Demo here](http://jacobz.top/2017-08/MCTowerWheat/)
+[Demo here](http://zyxin.xyz/2017-08/MCTowerWheat/)
 
 ## Usage example:
 Single Level:
